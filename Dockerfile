@@ -9,9 +9,11 @@ RUN curl -o /etc/pki/ca-trust/source/anchors/TEST_ADEO_SERVICES_INFRA_CA3.crt ht
 RUN curl -o /etc/pki/ca-trust/source/anchors/TEST_ADEO_SERVICES_INFRA_CA4.crt http://igc.groupeadeo.com/recette/TEST_ADEO_SERVICES_INFRA_CA4.crt
 RUN update-ca-trust
 
-RUN groupadd -g 1111 adeo && adduser -g 1111 -d / -u 1111 adeo
 RUN mkdir /prometheus-pingdom-exporter
 COPY ./* /prometheus-pingdom-exporter/
+
+RUN groupadd -g 1111 adeo && adduser -g 1111 -d / -u 1111 adeo
+
 RUN chown -R adeo.adeo /prometheus-pingdom-exporter
 USER 1111
 

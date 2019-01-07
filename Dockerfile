@@ -11,7 +11,7 @@ RUN update-ca-trust
 
 RUN groupadd -g 1111 adeo && adduser -g 1111 -d / -u 1111 adeo
 RUN mkdir /prometheus-pingdom-exporter
-COPY ./* /prometheus-pingdom-exporter
+COPY ./* /prometheus-pingdom-exporter/
 RUN chown -R adeo.adeo /prometheus-pingdom-exporter
 USER 1111
 

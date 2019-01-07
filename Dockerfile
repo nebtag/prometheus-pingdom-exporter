@@ -14,7 +14,7 @@ COPY ./* /prometheus-pingdom-exporter/
 
 RUN groupadd -g 1111 adeo && adduser -g 1111 -d / -u 1111 adeo
 
-RUN chown -R adeo.adeo /prometheus-pingdom-exporter
+#RUN chown -R adeo.adeo /prometheus-pingdom-exporter
 USER 1111
 
 EXPOSE 8000
